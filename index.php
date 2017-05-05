@@ -54,7 +54,7 @@
 	<div id="bottom">
 		
 		<?php
-			$url = "http://api.openweathermap.org/data/2.5/weather?id=5012639&lang=en&units=metric&APPID={28b965431fe0b4ed48b5a42692f996b6}";
+			$url = "http://api.openweathermap.org/data/2.5/weather?id=5012639&lang=en&units=metric&APPID=28b965431fe0b4ed48b5a42692f996b6";
 		
 			$contents = file_get_contents($url);
 			$clima=json_decode($contents);
