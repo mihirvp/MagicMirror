@@ -54,18 +54,16 @@
 	<div id="bottom">
 		
 		<?php
-			$url = "http://api.openweathermap.org/data/2.5/weather?id=5012639&lang=en&units=metric&APPID=28b965431fe0b4ed48b5a42692f996b6";
-		
-			$contents = file_get_contents($url);
-			$clima=json_decode($contents);
-			$temp_max=$clima->main->temp_max;
-			$temp_min=$clima->main->temp_min;
-			$cityname = $clima->name;
-		
-			echo $cityname . " - " .$today . "<br>";
-			echo "Temp Max: " . $temp_max ."&deg;C<br>";
-			echo "Temp Min: " . $temp_min ."&deg;C<br>";
-			echo "<img src='http://openweathermap.org/img/w/" . $icon ."'/ >";
+    			$BASE_URL = "http://query.yahooapis.com/v1/public/yql";
+    			$yql_query = 'select wind from weather.forecast where woeid in (select woeid from geo.places(1) where text="troy, mi")';
+    			$yql_query_url = $BASE_URL . "?q=" . urlencode($yql_query) . "&format=json";
+    			// Make call with cURL
+    			$session = curl_init($yql_query_url);
+    			curl_setopt($session, CURLOPT_RETURNTRANSFER,true);
+    			$json = curl_exec($session);
+			    // Convert JSON to PHP object
+     			$phpObj =  json_decode($json);
+    			var_dump($phpObj);
 		?>
 	</div>
 	
