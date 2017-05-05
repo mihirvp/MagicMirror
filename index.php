@@ -50,6 +50,30 @@
 	<div id="upper-left">
 		<div id="clock"></div> <!-- Including the date/time-script -->
 	</div>
+	<!-- Mihirs Shit-->
+	<div id="bottom">
+		
+		<?php
+			$url = "http://api.openweathermap.org/data/2.5/weather?id=5012639&lang=en&units=metric&APPID={28b965431fe0b4ed48b5a42692f996b6}";
+		
+			$contents = file_get_contents($url);
+			$clima=json_decode($contents);
+			$temp_max=$clima->main->temp_max;
+			$temp_min=$clima->main->temp_min;
+			$cityname = $clima->name;
+		
+			echo $cityname . " - " .$today . "<br>";
+			echo "Temp Max: " . $temp_max ."&deg;C<br>";
+			echo "Temp Min: " . $temp_min ."&deg;C<br>";
+			echo "<img src='http://openweathermap.org/img/w/" . $icon ."'/ >";
+		?>
+	</div>
+	
+	
+	<!-- End of Mihirs Shit-->
+	
+	
+	
 	<div id="upper-right">
 		<h2>...</h2>
 		<?php // Code for getting the RSS-news-feed
@@ -77,9 +101,9 @@
 		?>
 		<p>idg.se</p>
 	</div>
-	<div id="bottom">
+	<!--<div id="bottom">
 		<h3>
-		<?php // Depending on the hour of the day a different message is displayed.
+		</*?php // Depending on the hour of the day a different message is displayed.
 			$now = date('H');
 				if (($now > 06) and ($now < 10)) echo 'Good morning!';
 				else if (($now >= 10) and ($now < 12)) echo 'Have a nice day!';
@@ -92,6 +116,7 @@
 			?>
 		</h3>
 	</div>
+	-->
 </div>
 </body>
 </html>
