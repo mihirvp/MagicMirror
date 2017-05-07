@@ -50,18 +50,6 @@
 	<div id="upper-left">
 		<div id="clock"></div> <!-- Including the date/time-script -->
 	</div>
-	<!-- Mihirs Shit-->
-	<div id="bottom">
-		
-		<?php
-    			
-		?>
-	</div>
-	
-	
-	<!-- End of Mihirs Shit-->
-	
-	
 	
 	<div id="upper-right">
 		<h2>...</h2>
@@ -98,11 +86,8 @@
 		for($i = 0; $i < count($weather_info); $i++)
 		{
 			echo $weather_info[$i];
-			echo "<br>";
+			echo "<br/>";
 		}
-		
-			
-            echo $var;
             ?>
 		</h3>
 	</div>
