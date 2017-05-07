@@ -83,9 +83,11 @@
         <?php 
             	$var = shell_exec('python /var/www/html/weather.py');
 		echo $var;
-		for($i = 0; $i < strlen($var); $i++)
+	    	$weather_info = explode(",", $var);
+		echo count($weather_info);
+		for($i = 0; $i < count($weather_info); $i++)
 		{
-			echo $var[$i];
+			echo $weather_info[$i];
 			echo "<br/>";
 		}
             ?>
