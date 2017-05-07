@@ -27,7 +27,9 @@ daily = FIODaily.FIODaily(fio)
 for day in range(0, 7):
         #low followed by high for each day starting with today
         print(str(daily.get_day(day)['temperatureMin']))
+        print(',')
         print(str(daily.get_day(day)['temperatureMax']))
+        print(',');
 
 #php parse
 # pieces = explode(" ", $output)
