@@ -98,6 +98,7 @@
 		for($i = 0; $i < count($weather_info); $i++)
 		{
 			echo $weather_info[$i];
+			echo "<br>";
 		}
 		
 			
