@@ -93,7 +93,14 @@
 	<div id="bottom">
 		<h3>
         <?php 
-            $var = shell_exec('python /var/www/html/weather.py');
+            	$var = shell_exec('python /var/www/html/weather.py');
+	    	$weather_info = explode(" ", $var);
+		for($i = 0; $i < count($weather_info); $i++)
+		{
+			echo $weather_info[$i];
+		}
+		
+			
             echo $var;
             ?>
 		</h3>
